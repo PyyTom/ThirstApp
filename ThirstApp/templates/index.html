@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ThirstApp</title>
+</head>
+<body>
+    <form method="POST" action="/">
+        <h1>MONEY AVAILABLE $ {{zero}}</h1>
+        <label for="amount">MONEY TO ADD </label><input value=0.00 required type="number" name="amount" id="amount" min=0 step=0.25><input type="submit" name="button" value="ADD"><br>
+        <label for="dd">SELECT DRINK </label>
+        <select name='dd' id="dd">
+            {% for drink in drinks %}
+                <option id="{{drink.name}}" value="{{drink.name}}">{{drink.name}} - $ {{drink.price}}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" name="button" value="BUY"><br>
+        <label for="doin">CURRENT OPERATION</label><input type="text" id="doin" value="{{doin}}" style='width:100%'>
+    </form>
+</body>
+</html>
